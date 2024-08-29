@@ -1,0 +1,63 @@
+// sass allows you to write more powerful and efficient css. 
+// sass is a language that is an extension to css that must be compiled.
+// adds additional features to css that make it faster
+
+// you can create variables with saass. All variables begin with dollar sign
+
+// once you've written the sass file you need to compile it into css for 
+// browsers to understand in the terminal with sass index.scss:index.css (make sure its downloaded)
+// or more generically sass [filename].scss:[filename].css this converts the sass file into a css file
+// each time you make changes you are going to want to compile the code again. 
+// to automate that you want to use sass --watch index.scss:index.css
+// with sass you can nest css selectors inside of eachother
+// sass provides inheritance a powerful feature that allows 
+// you to reuse styles and avoid code duplication. It leverages the concept of "inheritance" 
+// in a way similar to object-oriented programming, but for CSS
+
+// create variables
+$color: magenta;
+
+ul{
+    font-size: 14px;
+    color: $color;
+}
+
+ol{
+    font-size: 18px;
+    color: $color;
+}
+// nest css selectors
+div{
+    font-size: 18px;
+    p{
+        color:blue;
+    }
+    ul{
+        color: green;
+    }
+}
+
+// inheritance
+
+%message{
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.success{
+    @extend %message;
+    background-color: green;
+}
+.warning{
+    @extend %message;
+    background-color: orange;
+
+}
+.error{
+    @extend %message;
+    background-color: red;
+}
